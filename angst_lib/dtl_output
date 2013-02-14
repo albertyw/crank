@@ -1,0 +1,37 @@
+Input file: /tmp/tmpX8tIQ2
+Duplication cost: 2, Transfer cost: 3, Loss cost: 1
+Random seed: 40371
+input species tree of 69 taxa
+unrooted input gene tree of 6 taxa
+1 input gene trees total
+Computing...
+
+
+------------ Reconciliation for Gene Tree 1 (Unrooted) -------------
+Species Tree: 
+((((((((Aerpe,(Hypbu,Ignho)n9)n8,(Deska,Stama)n10)n7,((Calma,((Pyrae,((Pyrar,Thene)n16,Pyrca)n15)n14,Pyris)n13)n12,Thepe)n11)n6,Korcr)n5,Naneq)n4,((((Arcfu,(((((Halla,Natph)n25,(((Halma,Halwa)n28,Halmu)n27,(Halsa,Halsp)n29)n26)n24,Halut)n23,(((((Matpa,Metcu)n34,Metbo)n33,Metla)n32,Methu)n31,Uncme)n30)n22,((((Metac,Metma)n38,Metba)n37,Metbu)n36,Metsa)n35)n21)n20,(((((((MetC6,MetmC)n45,Metmp)n44,(MetC7,Metva)n46)n43,Metae)n42,(Metfe,(Metja,Metvu)n48)n47)n41,((Metsm,Metst)n50,Metth)n49)n40,Metka)n39)n19,(((Pyrab,(Pyrfu,Pyrho)n54)n53,Thesi)n52,((Thega,Theon)n56,Theko)n55)n51)n18,((Metse,(((((Sul04,Sul27)n63,SuliM)n62,(Sul14,SuliL)n64)n61,(Sul51,Sulso)n65)n60,(Sulac,Sulto)n66)n59)n58,(Picto,(Theac,Thevo)n68)n67)n57)n17)n3,Nitma)n2,Censy)n1;
+
+Optimally rooted Gene Tree: 
+(((Halsa,Halsp),(Halma,(Halmu,Halla))),Natph);
+
+Reconciliation:
+Halsa: Leaf Node
+Halsp: Leaf Node
+LCA[Halsa, Halsp]: Speciation, Mapping --> n29
+Halma: Leaf Node
+Halmu: Leaf Node
+Halla: Leaf Node
+LCA[Halmu, Halla]: Transfer, Mapping --> Halmu, Recipient --> Halla
+LCA[Halma, Halla]: Speciation, Mapping --> n27
+LCA[Halsa, Halla]: Speciation, Mapping --> n26
+Natph: Leaf Node
+LCA[Halsa, Natph]: Speciation, Mapping --> n24
+
+The minimum reconciliation cost is: 5 (Duplications: 0, Transfers: 1, Losses: 2)
+
+time: 0s
+
+
+
+cog.events
+['[brn]: Natph.76801488-Halma.55377613-Halmu.257388946-Halla.222480477-Halsp.15790704-Halsa.169236445, ', '[spc]: Halla-Natph-Halma-Halwa-Halmu-Halsa-Halsp', '[spc]: Halla-Natph', '[los]: Halla', '[spc]: Halma-Halwa-Halmu-Halsa-Halsp', '[spc]: Halsa-Halsp', '[cur]: Halsp', '[cur]: Halsa', '[spc]: Halma-Halwa-Halmu', '[cur]: Halma', '[spc]: Halma-Halwa', '[los]: Halwa', '[hgt]: Halmu --> Halla', '[cur]: Halmu', '[cur]: Halla', '[cur]: Natph']
