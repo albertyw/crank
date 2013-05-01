@@ -1,10 +1,8 @@
-Crank
-=====
+# Crank #
 
 Phylogenetic tree reconstruction using AnGST (Analyzer of Gene and Species Trees)
 
-Purpose And Background
-======================
+## Purpose And Background ##
 Crank is a program that finds the maximum parsimony species tree that fits a given 
 set of gene trees.  Species and gene trees show how species and genes, 
 respectively, evolved over the course of history.  More specifically, species 
@@ -26,8 +24,7 @@ patterns in gene history, this is used by Crank in reverse to analyze species
 history.  Crank uses the weighted average (the AnGST score) of gene events as a 
 metric to evaluate species tree correctness.  
 
-Abstract Algorithm
-====================
+## Abstract Algorithm ##
 Crank is essentially a relatively simple hill climbing algorithm that finds a 
 (hopefully global, but probably local) min in species tree structure space where 
 the score is the weighted average of the set of AnGST scores (i.e. Crank 
@@ -53,19 +50,20 @@ operation(s) that created the tree(s) with the minimimum score(s) to the base tr
 8.  If no operations were found, the algorithm has found a local minima.  Else, 
 continue from step 1.  
 
-Running Time
-------------
+### Running Time ###
+Almost the entirety of the running time for Crank is waiting for AnGST to run.  
+Therefore, the running time of Crank is highly dependent on how many gene trees 
+are in the run dataset, the number of trial trees used, and the implementation of 
+AnGST used (of which there is the original Python implementation and Ranger-DTL).  
+The running time of the AnGST algorithm itself is mostly dependent on the number 
+of the genes and species being reconciled.  
 
-Input Data Generation
-=========================
+## Input Data Generation ##
 
-Running Crank
-=============
+## Running Crank ##
 
-Implementation
-==============
+## Implementation ##
 
 
-Constraints and Pitfalls
-========================
+## Constraints and Pitfalls ##
 
