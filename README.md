@@ -58,7 +58,17 @@ AnGST used (of which there is the original Python implementation and Ranger-DTL)
 The running time of the AnGST algorithm itself is mostly dependent on the number 
 of the genes and species being reconciled.  
 
+Since individual AnGST reconciliations are standalone and don't interact with 
+each other, reconciliations are easily parallelizable.  Crank parallelizes the 
+running of AnGST across several compute nodes through a built-in job scheduler.  
+When run on the coyote cluster, one iteration of the AnGST algorithm can still 
+take several hours to two days to complete, depending on the size of the dataset.  
+
 ## Input Data Generation ##
+Since the input data are trees, they need to be generated from a list of species 
+and the sequences of their gene families.  These can be generated in a variety 
+of ways.  Currently, gene trees are generated from [arCOG](http://archaea.ucsc.edu/arcogs/) 
+sequences.  
 
 ## Running Crank ##
 
