@@ -72,8 +72,42 @@ sequences.
 
 ## Running Crank ##
 
-## Implementation ##
 
+## Implementation ##
+The main logic for the Crank program lies in `Crank.py` with the main control loop 
+`run_iteration()`.  `Crank.py` imports and uses several other files and packages:
+- Cog.py
+- Cogbox.py
+- CrankStatistics.py
+- GenesFile.py
+- Job.py
+- PyVM.py
+- Scheduler.py
+- Tree.py
+- tests
+- utilities
+  - AlbertywScheduler.py
+  - DarwinScheduler.py
+  - GenesFileAnnotator.py
+  - GenesFileComparison.py
+  - GenesFileCreation.py
+  - GenesFilePruner.py
+  - GenesFileViz.py
+  - LeafStripper.py
+  - Reconcile.py
+  - ReconcileSingle.py
+  - RunTime.py
+  - StatisticsVisualizer.py
+  - TreeCompare.py
+  - TreeVisulizer.py
+Third party files/packages
+- angst\_lib
+- dendropy
+- ete
+- tree\_lib
+System packages
+- ?
+### Dependencies ###
 
 ## Constraints and Pitfalls ##
 
