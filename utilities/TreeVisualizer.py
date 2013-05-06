@@ -13,7 +13,7 @@ sys.path.append(os.path.dirname(__file__)+'/../../itol')
 import Itol, ItolExport
 
 
-class TreeVisualiser:
+class TreeVisualizer:
     def __init__(self, tree_location):
         self.tree_location = tree_location
         
