@@ -12,9 +12,6 @@ import re
 import os
 import sys
 
-sys.path.append('./tree_lib')
-sys.path.append(os.path.dirname(__file__)+'/tree_lib')
-import multitree
 sys.path.append('./ete')
 sys.path.append(os.path.dirname(__file__)+'/ete')
 from etetree import Tree as EteTree
@@ -35,8 +32,6 @@ class Tree(object):
         if tree_structure[-1] != ';':
             tree_structure += ';'
         self.tree_structure = tree_structure
-        #self.tree = multitree.multitree()
-        #self.tree.Build(self.tree_structure)
         self.ete = EteTree(tree_structure)
     
     def __repr__(self):
@@ -329,7 +324,6 @@ class Tree(object):
 class SpeciesTree(Tree):
     """
     Subclass of Tree, used for operations specific to species trees
-    This class stores the tree structure in AnGST's angst_multitree class
     """
     
     def spr(self, prune, graft):
