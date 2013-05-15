@@ -72,42 +72,67 @@ sequences.
 
 ## Running Crank ##
 
+### Crank Output ###
 
 ## Implementation ##
 The main logic for the Crank program lies in `Crank.py` with the main control loop 
 `run_iteration()`.  `Crank.py` imports and uses several other files and packages:
-- Cog.py
-- Cogbox.py
-- CrankStatistics.py
-- GenesFile.py
-- Job.py
-- PyVM.py
-- Scheduler.py
-- Tree.py
-- tests
+- Cog.py - A class that manages the reconciliation of a single species and 
+  gene tree.  This also contains code to run AnGST (specifically Ranger-DTL) 
+  and parse its output into Python variables.  
+- Cogbox.py - A class that reads the parsed output of many Cog classes (several 
+  gene trees, one species tree) and computes/holds summary data (e.g. scores, 
+  run times, gene events)
+- CrankStatistics.py - A class that computes and graphs higher level statistics 
+  that aren't used within Crank.  
+- GenesFile.py - A class that holds/reads/writes sets of gene trees
+- Job.py - The script that is submitted to the compute cluster job queue to run 
+  reconciliations.  
+- PyVM.py - third party module to track memory usage
+- Scheduler.py - Class that handles distributing/sending jobs to the cluster(s).  
+  Handles submitting jobs to a local queue and sending jobs to other queues over 
+  scp 
+- Tree.py - Contains Tree (general tree reading/manipulation), SpeciesTree, and 
+  GeneTree classes.  A lot of computation is actually handed off to the dendropy 
+  and ete packages
+- tests - directory containing very incomplete tests of Crank
+    - TreeTest.py - actually relatively well tested
+    - CogTest.py
 - utilities
-  - AlbertywScheduler.py
-  - DarwinScheduler.py
-  - GenesFileAnnotator.py
-  - GenesFileComparison.py
-  - GenesFileCreation.py
-  - GenesFilePruner.py
-  - GenesFileViz.py
-  - LeafStripper.py
-  - Reconcile.py
-  - ReconcileSingle.py
-  - RunTime.py
-  - StatisticsVisualizer.py
-  - TreeCompare.py
-  - TreeVisulizer.py
+    - AlbertywScheduler.py - Receives jobs that have been copied from 
+      Scheduler.py and runs them locally
+    - DarwinScheduler.py - Receives jobs that have been copied from Scheduler.py
+      and runs them on the local queue
+    - GenesFileAnnotator.py - Annotates (adds comments) Genesfiles based on 
+      configurable rules
+    - GenesFileComparison.py - Compares gene trees between two GenesFiles and 
+      computes some basic statistics
+    - GenesFileCreation.py - Creates a GenesFile from a directory of individual 
+      files
+    - GenesFilePruner.py - a hackish script to select trees from one GenesFile 
+      and save them to a new GenesFile
+    - GenesFileViz.py - Creates an image of every tree in a GenesFile
+    - LeafStripper.py - When reducing the number of species being analyzed, 
+      remove leaves from species and gene trees (in GenesFiles) matching those 
+      species
+    - Reconcile.py - Manually reconcile a GenesFile against a species tree
+    - ReconcileSingle.py - Manual reconcile a single gene tree against a species 
+      tree
+    - Starter.py - A file with configuration variables to start Crank running
+    - StatisticsVisualizer.py - When run on a Crank output directory, creates 
+      pretty graphs and tree images
+    - TreeCompare.py - Compare the structure of two trees
+    - TreeVisulizer.py - Converts a tree file into an image of the tree
 Third party files/packages
-- angst\_lib
-- dendropy
-- ete
-- tree\_lib
+- angst\_lib - package holding the actual AnGST algorithm
+- dendropy - Tree manipulation package, currently only used to calculate 
+  Robinson-Foulds distance
+- ete - Another Tree manipulation package, forms the basis of Tree.py
+- tree\_lib - AnGST's built-in tree manipulation package
 System packages
-- ?
-### Dependencies ###
+- matplotlib - Used by CrankStatistics to plot stats 
+- [itol](https://github.com/albertyw/itol-api) - Used by CrankStatistics to 
+  draw trees
 
 ## Constraints and Pitfalls ##
 
