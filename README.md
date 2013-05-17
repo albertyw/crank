@@ -141,11 +141,11 @@ The main logic for the Crank program lies in `Crank.py` with the main control lo
     - TreeVisulizer.py - Converts a tree file into an image of the tree
     
 ### Third party files/packages ###
-- angst\_lib - package holding the actual AnGST algorithm
+- include
+    - dtl - The Ranger-DTL executable implementation of AnGST
 - dendropy - Tree manipulation package, currently only used to calculate 
   Robinson-Foulds distance
 - ete - Another Tree manipulation package, forms the basis of Tree.py
-- tree\_lib - AnGST's built-in tree manipulation package
 
 ### System packages ###
 - matplotlib - Used by CrankStatistics to plot stats 

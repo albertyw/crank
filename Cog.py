@@ -12,10 +12,6 @@ import sys
 import tempfile
 import Tree
 
-sys.path.append('./angst_lib')
-sys.path.append(os.path.dirname(__file__)+'/angst_lib/')
-import AnGSTHelper
-
 sys.path.append('./ete')
 sys.path.append(os.path.dirname(__file__)+'/ete')
 from etetree import Tree as EteTree
@@ -81,7 +77,7 @@ class Cog:
         input_file.close()
         
         # Create command to run dtl
-        command = '/home/albertyw/crank/angst_lib/dtl '
+        command = '/home/albertyw/crank/include/dtl '
         command += '-i '+str(input_file_location)+' '
         command += '-D '+str(self.penalties['dup'])+' '
         command += '-T '+str(self.penalties['hgt'])+' '
