@@ -131,7 +131,7 @@ class TestSequenceFunctions(unittest.TestCase):
         nodes = self.treeA.get_node_list()
         nodes = ['-'.join(node.get_leaf_names()) for node in nodes] 
         nodes = set(nodes)
-        self.assertEquals(nodes, set(['1.6', '5.8-10.7-1.6', '5.8-10.7', '6.1-5.8-10.7-1.6', '10.7', '5.8', '6.1']))
+        self.assertEquals(nodes, set(['1.6', '10.7-5.8', '10.7', '5.8', '1.6-10.7-5.8', '1.6-10.7-5.8-6.1', '6.1']))
         
         
     def test_is_sibling(self):
@@ -169,11 +169,11 @@ class TestSequenceFunctions(unittest.TestCase):
     def test_find_ancestor(self):
         ancestors = self.speciesTreeA.find_ancestor("1.6")
         ancestors = [ancestor.get_leaf_names() for ancestor in ancestors]
-        self.assertEquals(ancestors, [['1.6'], ['5.8', '10.7', '1.6'], ['6.1', '5.8', '10.7', '1.6']])
+        self.assertEquals(ancestors, [['1.6'], ['1.6', '10.7', '5.8'], ['1.6', '10.7', '5.8', '6.1']])
         
         ancestors = self.speciesTreeA.find_ancestor("5.8")
         ancestors = [ancestor.get_leaf_names() for ancestor in ancestors]
-        self.assertEquals(ancestors, [['5.8'], ['5.8', '10.7'], ['5.8', '10.7', '1.6'], ['6.1', '5.8', '10.7', '1.6']])
+        self.assertEquals(ancestors, [['5.8'], ['10.7', '5.8'], ['1.6', '10.7', '5.8'], ['1.6', '10.7', '5.8', '6.1']])
         
         
     def test_find_traversal_length(self):

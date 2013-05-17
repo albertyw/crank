@@ -37,7 +37,7 @@
 #
 # 
 # #END_LICENSE#############################################################
-__VERSION__="ete2-2.1rev492" 
+__VERSION__="ete2-2.1rev544" 
  #START_LICENSE###########################################################
 #
 # Copyright (C) 2009 by Jaime Huerta Cepas. All rights reserved.
@@ -241,7 +241,7 @@ class TreeNode(object):
         if isinstance(item, self.__class__):
             return item in set(self.get_descendants())
         elif type(item)==str:
-            return item in set([n.name for n in self.get_descendants()])
+            return item in set([n.name for n in self.traverse()])
 
     def __len__(self):
         """Node len returns number of children."""
@@ -642,17 +642,17 @@ class TreeNode(object):
             return self._iter_descendants_levelorder(is_leaf_fn=is_leaf_fn)
         elif strategy=="postorder":
             return self._iter_descendants_postorder(is_leaf_fn=is_leaf_fn)
-
+            
     def _iter_descendants_postorder(self, is_leaf_fn=None):
         """
-        Iterate over all desdecendant nodes. 
+        Iterate over all desdecendant nodes.
         """
-        if not is_leaf_fn or not is_leaf_fn(ch):
+        if not is_leaf_fn or not is_leaf_fn(self):
             for ch in self.children:
-                for node in ch._iter_descendants_postorder():
+                for node in ch._iter_descendants_postorder(is_leaf_fn=is_leaf_fn):
                     yield node
         yield self
-
+        
     def _iter_descendants_levelorder(self, is_leaf_fn=None):
         """ 
         Iterate over all desdecendant nodes. 
@@ -673,7 +673,7 @@ class TreeNode(object):
         while node is not None:
             yield node
             if not is_leaf_fn or not is_leaf_fn(node):
-                to_visit.extendleft(node.children) 
+                to_visit.extendleft(reversed(node.children))
             try:
                 node = to_visit.popleft()
             except:
@@ -1045,6 +1045,37 @@ class TreeNode(object):
                     max_node = node
             return max_node, max_dist
 
+    def get_closest_leaf(self, topology_only=False):
+        """Returns node's closest descendant leaf and the distance to
+        it.
+
+        :argument False topology_only: If set to True, distance
+          between nodes will be referred to the number of nodes
+          between them. In other words, topological distance will be
+          used instead of branch length distances.
+
+        :return: A tuple containing the closest leaf referred to the
+          current node and the distance to it.
+
+        """
+        min_dist = None
+        min_node = None
+        if self.is_leaf():
+            return self, 0.0
+        else:
+            for ch in self.children:
+                node, d = ch.get_closest_leaf(topology_only=topology_only)
+                if topology_only:
+                    d += 1.0
+                else:
+                    d += ch.dist
+                if min_dist is None or d<min_dist:
+                    min_dist = d
+                    min_node = node
+            return min_node, min_dist
+
+
+            
     def get_midpoint_outgroup(self):
         """
         Returns the node that divides the current tree into two distance-balanced
@@ -1067,10 +1098,10 @@ class TreeNode(object):
                 current = current.up
         return current
 
-    def populate(self, size, names_library=None, reuse_names=False, 
-                 random_branches=False): 
-        """
-        Generates a random topology by populating current node.
+    def populate(self, size, names_library=None, reuse_names=False,
+                 random_branches=False, branch_range=(0,1),
+                 support_range=(0,1)): 
+        """Generates a random topology by populating current node.
 
         :argument None names_library: If provided, names library
           (list, set, dict, etc.) will be used to name nodes.
@@ -1079,8 +1110,16 @@ class TreeNode(object):
           necessarily unique, which makes the process a bit more
           efficient.
 
-        :argument False random: If True, branch distances and support
+        :argument False random_branches: If True, branch distances and support
           values will be randomized.
+        
+        :argument (0,1) branch_range: If random_branches is True, this
+        range of values will be used to generate random distances.
+
+        :argument (0,1) support_range: If random_branches is True,
+        this range of values will be used to generate random branch
+        support values.
+
         """
         NewNode = self.__class__
 
@@ -1106,10 +1145,10 @@ class TreeNode(object):
             c2 = p.add_child()
             next.extend([c1, c2])
             if random_branches:
-                c1.dist = random.random()
-                c2.dist = random.random()
-                c1.support = random.random()
-                c2.support = random.random()
+                c1.dist = random.uniform(*branch_range)
+                c2.dist = random.uniform(*branch_range)
+                c1.support = random.uniform(*branch_range)
+                c2.support = random.uniform(*branch_range)
 
         # next contains leaf nodes
         charset =  "abcdefghijklmnopqrstuvwxyz"
@@ -1203,12 +1242,14 @@ class TreeNode(object):
 
         outgroup.up = self
         outgroup2.up = self
+        # outgroup is always the first children. Some function my
+        # trust on this fact, so do no change this.
         self.children = [outgroup,outgroup2]
         middist = (outgroup2.dist + outgroup.dist)/2
         outgroup.dist = middist
         outgroup2.dist = middist
         outgroup2.support = outgroup.support
-        #self.children.sort()
+
     def unroot(self):
         """ 
         Unroots current node. This function is expected to be used on
@@ -1218,7 +1259,7 @@ class TreeNode(object):
         """
         # if is rooted
         #if not self.is_root():
-            #print >>sys.stderr, "Warning. You are unrooting an internal node.!!"
+        #    print >>sys.stderr, "Warning. You are unrooting an internal node.!!"
         if len(self.children)==2:
             if not self.children[0].is_leaf():
                 self.children[0].delete()
@@ -1530,10 +1571,10 @@ class TreeNode(object):
         if position not in FACE_POSITIONS:
             raise ValueError("face position not in %s" %FACE_POSITIONS)
         
-        if Face in face.__class__.__bases__:
+        if isinstance(face, Face):
             getattr(self._faces, position).add_face(face, column=column)
         else:
-            raise ValueError("'face' must be a Face or inherited instance")
+            raise ValueError("not a Face instance")
 
     def set_style(self, node_style):
         """
