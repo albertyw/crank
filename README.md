@@ -71,8 +71,24 @@ of ways.  Currently, gene trees are generated from [arCOG](http://archaea.ucsc.e
 sequences.  
 
 ## Running Crank ##
+Since Crank has a lot of files and configurable variables, there is a file in 
+`utilities/Starter.py` which is used to hold Crank inputs and parameters.  See
+that file for details about running Crank.  
 
 ### Crank Output ###
+When you run Crank, you need to specify an output directory where Crank will 
+place its output files.  The main output file is `output.txt`, which will show 
+the summary results of the reconciliations of the the base tree and trial trees.  
+There will also be a `shell` diretory and a `shell/finished` directory which 
+holds the shell input files that run the reconciliations.  The `shell/finished` 
+directory also contains the output of finished and crashed reconciliations.  The 
+`stats` directory contains statistics computed by `CrankStatistics.py`.  
+
+Each iteration of Crank creates a new subdirectory numbered by the iteration 
+count.  In each iteration directory, there is a `base` subdirectory which contains
+the input and output of the base tree's reconciliation, a `trial` subdirectory 
+which contains the input and output of the trial trees' reconciliations, and 
+a `trial_info` file which contains the operations used to create the trial trees.  
 
 ## Implementation ##
 The main logic for the Crank program lies in `Crank.py` with the main control loop 
@@ -123,16 +139,17 @@ The main logic for the Crank program lies in `Crank.py` with the main control lo
       pretty graphs and tree images
     - TreeCompare.py - Compare the structure of two trees
     - TreeVisulizer.py - Converts a tree file into an image of the tree
+    
 ### Third party files/packages ###
 - angst\_lib - package holding the actual AnGST algorithm
 - dendropy - Tree manipulation package, currently only used to calculate 
   Robinson-Foulds distance
 - ete - Another Tree manipulation package, forms the basis of Tree.py
 - tree\_lib - AnGST's built-in tree manipulation package
+
 ### System packages ###
 - matplotlib - Used by CrankStatistics to plot stats 
 - [itol](https://github.com/albertyw/itol-api) - Used by CrankStatistics to 
   draw trees
 
-## Constraints and Pitfalls ##
 
