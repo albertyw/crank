@@ -1,0 +1,485 @@
+arCOG04150 , Predicted RNA-binding protein (contains KH domains)  , -38.0
+arCOG04302 , Glutamyl- or glutaminyl-tRNA synthetase  , -34.0
+arCOG01257 , Chaperonin GroEL (HSP60 family)  , -30.0
+arCOG01228 , Signal recognition particle GTPase  , -26.0
+arCOG00495 , Acetylglutamate semialdehyde dehydrogenase  , -23.0
+arCOG04098 , Ribosomal protein L22  , -21.0
+arCOG04473 , Ribosomal protein L31E  , -21.0
+arCOG00486 , Cysteinyl-tRNA synthetase  , -20.0
+arCOG00585 , Mrp family protein, ATPase, contains iron-sulfur cluster , -20.0
+arCOG00371 , Chromosome segregation ATPase  , -18.0
+arCOG04045 , Dihydroxyacid dehydratase/phosphogluconate dehydratase  , -18.0
+arCOG00574 , Ribulose 1,5-bisphosphate synthetase, converts PRPP to RuBP, flavoprotein , -17.0
+arCOG00779 , Ribosomal protein L15  , -16.0
+arCOG01255 , Alanyl-tRNA synthetase  , -16.0
+arCOG01723 , Adenylate cyclase, class 2 (thermophilic)  , -16.0
+arCOG04071 , Ribosomal protein L4  , -16.0
+arCOG00039 , Predicted PP-loop superfamily ATPase  , -15.0
+arCOG00493 , Glyceraldehyde-3-phosphate dehydrogenase/erythrose-4-phosphate dehydrogenase  , -15.0
+arCOG00895 , Glycosyltransferase , -14.0
+arCOG00915 , 4-aminobutyrate aminotransferase or related aminotransferase  , -14.0
+arCOG02382 , Chemotaxis response regulator containing a CheY-like receiver domain and a methylesterase domain  , -14.0
+arCOG00255 , Prephenate dehydratase  , -13.0
+arCOG01471 , Hemerythrin HHE cation binding domain containing protein , -13.0
+arCOG02231 , Uncharacterized FAD-dependent dehydrogenase  , -13.0
+arCOG02394 , Uncharacterized conserved protein, containing HTH domain , -13.0
+arCOG02741 , Thiamine biosynthesis protein ThiC  , -13.0
+arCOG00808 , Valyl-tRNA synthetase  , -12.0
+arCOG02172 , 6-pyruvoyl-tetrahydropterin synthase  , -12.0
+arCOG04058 , Uncharacterized conserved protein  , -12.0
+arCOG04255 , Ribosomal protein S12  , -12.0
+arCOG00096 , Glutamate synthase domain 3  , -11.0
+arCOG00258 , Uncharacterized ABC-type transport system, periplasmic component/surface lipoprotein  , -11.0
+arCOG04319 , Predicted membrane protein  , -11.0
+arCOG00044 , tRNA(Ile)-lysidine synthase MesJ , -10.0
+arCOG00073 , PAPS reductase related enzyme  fused to RNA-binding PUA domain and ferredoxin domain , -10.0
+arCOG01231 , Ni2+-binding GTPase involved in regulation of expression and maturation of urease and hydrogenase  , -10.0
+arCOG01543 , NADH dehydrogenase subunit I  , -10.0
+arCOG00813 , ACT domain-containing protein  , -9.0
+arCOG01049 , 3-deoxy-D-arabino-heptulosonate 7-phosphate (DAHP) synthase  , -9.0
+arCOG01545 , Formate hydrogenlyase subunit 4  , -9.0
+arCOG02466 , RNA-binding protein involved in rRNA processing  , -9.0
+arCOG04227 , Predicted CoA-binding protein  , -9.0
+arCOG04358 , Uncharacterized protein required for formate dehydrogenase activity  , -9.0
+arCOG00626 , Hemolysins or related protein containing CBS domains  , -8.0
+arCOG00770 , Rad3-related DNA helicase  , -8.0
+arCOG00932 , Uncharacterized conserved protein related to pyruvate formate-lyase activating enzyme  , -8.0
+arCOG02190 , Arsenite efflux pump ACR3 or related permease  , -8.0
+arCOG04214 , Uncharacterized conserved protein  , -8.0
+arCOG04226 , Fuculose-1-phosphate aldolase , -8.0
+arCOG04902 , Uncharacterized conserved protein  , -8.0
+arCOG05487 , Uncharacterized conserved protein , -8.0
+arCOG00110 , 16S RNA G1207 methylase RsmC  , -7.0
+arCOG00983 , 3-dehydroquinate synthetase  , -7.0
+arCOG01697 , Aconitase A  , -7.0
+arCOG01915 , Membrane protease subunit, stomatin/prohibitin homolog  , -7.0
+arCOG03142 , Uncharacterized conserved protein , -7.0
+arCOG04217 , Predicted metallopeptidase  , -7.0
+arCOG04356 , Nuclease of restriction endonuclease-like fold, implicated in nucleotide excision repair , -7.0
+arCOG04409 , Predicted nuclease (RNAse H fold) , -7.0
+arCOG05045 , Zn-finger domain associated with topoisomerase type I  , -7.0
+arCOG05055 , Uncharacterized conserved protein , contains class III signal peptide , -7.0
+arCOG05114 , Soluble P-type ATPase, fragment  , -7.0
+arCOG05707 , Uncharacterized conserved protein , -7.0
+arCOG05729 , Radical SAM superfamily enzyme , -7.0
+arCOG00154 , Maltose-binding periplasmic protein , -6.0
+arCOG00222 , ABC-type Fe3+ transport system, periplasmic component  , -6.0
+arCOG00226 , ABC-type thiamine transport system, periplasmic component  , -6.0
+arCOG01694 , FHA domain and HTH domain , -6.0
+arCOG01864 , Predicted transcriptional regulator, xre family , -6.0
+arCOG01922 , Uncharacterized conserved protein , -6.0
+arCOG01939 , Lipoate-protein ligase A  , -6.0
+arCOG02712 , Predicted permease  , -6.0
+arCOG02990 , Uncharacterized conserved protein  , -6.0
+arCOG03384 , Uncharacterized protein related to the periplasmic component of the Tol biopolymer transport system  , -6.0
+arCOG03664 , Glycosyltransferase , -6.0
+arCOG03838 , Coenzyme PQQ synthesis protein D , -6.0
+arCOG04112 , Diphthamide synthase subunit DPH2  , -6.0
+arCOG04531 , Mn2+ and Fe2+ transporter of the NRAMP family  , -6.0
+arCOG04798 , Thymidine kinase  , -6.0
+arCOG05494 , Uncharacterized conserved protein , -6.0
+arCOG05521 , Transcriptional regulator containing HTH domain, ArsR family  , -6.0
+arCOG05556 , Uncharacterized conserved protein , -6.0
+arCOG05594 , Uncharacterized conserved protein , -6.0
+arCOG05603 , Uncharacterized conserved protein , -6.0
+arCOG05624 , Uncharacterized conserved protein , -6.0
+arCOG05637 , Uncharacterized conserved protein , -6.0
+arCOG05639 , Zn finger protein , -6.0
+arCOG05641 , Uncharacterized conserved protein , -6.0
+arCOG05646 , Uncharacterized conserved protein , -6.0
+arCOG08081 , fqoJ/nuoJ hypothetical protein, ferredoxin:quinone oxidoreductase, complex I, subunit J , -6.0
+arCOG00383 , Uncharacterized protein containing TOPRIM domain, potential nuclease  , -5.0
+arCOG00505 , Zn-dependent hydrolase, glyoxylase family  , -5.0
+arCOG00769 , Putative intracellular protease/amidase  , -5.0
+arCOG00977 , Precorrin-6B methylase 2  , -5.0
+arCOG01305 , Topoisomerase DNA binding C4 zinc finger fused to uncharacterized N-terminal domain often associated with RecB-like endonuclease of COG1637 , -5.0
+arCOG01457 , Zn-dependent alcohol dehydrogenase  , -5.0
+arCOG01631 , SAM-dependent methyltransferase , -5.0
+arCOG01911 , Periplasmic serine protease (ClpP class)  , -5.0
+arCOG02816 , Peptide methionine sulfoxide reductase  , -5.0
+arCOG02980 , Uncharacterized conserved protein , -5.0
+arCOG04498 , Predicted transcriptional regulator related to sugar-specific regulator TrmB , -5.0
+arCOG04624 , Predicted flavoprotein  , -5.0
+arCOG04686 , Exoribonuclease R  , -5.0
+arCOG05428 , Uncharacterized conserved protein , -5.0
+arCOG05570 , Predicted DNA binding protein, contains leucin zipper domain , -5.0
+arCOG05696 , Uncharacterized conserved protein , -5.0
+arCOG06017 , Uncharacterized conserved protein , -5.0
+arCOG00292 , Ferredoxin domain containing protein , -4.0
+arCOG00561 , Predicted membrane-bound dolichyl-phosphate-mannose-protein mannosyltransferase  , -4.0
+arCOG00687 , Transposase , -4.0
+arCOG00699 , N-acetylglucosamine-6-phosphate deacetylase  , -4.0
+arCOG01288 , Predicted nucleic-acid-binding protein containing a Zn-ribbon  , -4.0
+arCOG01483 , Nicotinate-nucleotide pyrophosphorylase  , -4.0
+arCOG02001 , Acetolactate synthase large subunit or other thiamine pyrophosphate-requiring enzyme , -4.0
+arCOG02280 , Predicted transcriptional regulator, c-terminal HTH-like domain  , -4.0
+arCOG02607 , Glutaredoxin , -4.0
+arCOG03000 , Gentisate 1,2-dioxygenase  , -4.0
+arCOG03651 , Amino acid transporter  , -4.0
+arCOG03743 , Predicted aspartyl protease  , -4.0
+arCOG03749 , Predicted membrane protein  , -4.0
+arCOG03765 , Uncharacterized conserved membrane protein , -4.0
+arCOG04114 , Uncharacterized conserved protein , -4.0
+arCOG04391 , Rubredoxin  , -4.0
+arCOG04802 , Nucleotide-binding protein,  UspA family , -4.0
+arCOG04839 , Uncharacterized conserved protein  , -4.0
+arCOG04842 , Uncharacterized conserved protein  , -4.0
+arCOG04849 , Uncharacterized conserved protein , -4.0
+arCOG05410 , ABC-type dipeptide/oligopeptide/nickel transport system, ATPase component  , -4.0
+arCOG05551 , Uncharacterized conserved protein , -4.0
+arCOG05820 , Uncharacterized conserved protein , -4.0
+arCOG05899 , Cell suface protein , -4.0
+arCOG05917 , Uncharacterized conserved protein , -4.0
+arCOG05952 , Uncharacterized conserved protein , -4.0
+arCOG05963 , Uncharacterized conserved protein , -4.0
+arCOG05964 , Acyl-CoA dehydrogenase  , -4.0
+arCOG06006 , Uncharacterized conserved protein , -4.0
+arCOG07148 , Uncharacterized conserved protein , -4.0
+arCOG07176 , Uncharacterized conserved protein , -4.0
+arCOG07331 , Uncharacterized conserved protein , -4.0
+arCOG00012 , Amino acid transporter  , -3.0
+arCOG00217 , Molybdopterin biosynthesis enzyme  , -3.0
+arCOG00382 , Predicted trancriptional regulator, ArsR family , -3.0
+arCOG00516 , Predicted flavin-nucleotide-binding protein  , -3.0
+arCOG00624 , Permease, similar to cation transporter  , -3.0
+arCOG00741 , Transcriptional regulator containing HTH domain, ArsR family  , -3.0
+arCOG00802 , ATP-dependent exoDNAse (exonuclease V) beta subunit (contains helicase and exonuclease domains)  , -3.0
+arCOG01062 , Predicted transcriptional regulator  , -3.0
+arCOG01136 , EMAP domain RNA-binding protein , -3.0
+arCOG01261 , Short-chain alcohol dehydrogenase , -3.0
+arCOG01394 , UDP-N-acetylglucosamine:LPS N-acetylglucosamine transferase  , -3.0
+arCOG01469 , ABC-type multidrug transport system, permease component  , -3.0
+arCOG02398 , Cytochrome c biogenesis protein  , -3.0
+arCOG03715 , ATP-cone domain , -3.0
+arCOG03789 , Uncharacterized conserved protein , -3.0
+arCOG04605 , Uncharacterized conserved protein , -3.0
+arCOG04812 , Uncharacterized conserved membrane protein  , -3.0
+arCOG05018 , Uncharacterized conserved protein , -3.0
+arCOG05084 , Uncharacterized conserved protein  , -3.0
+arCOG05396 , Predicted membrane protein  , -3.0
+arCOG05717 , Uncharacterized conserved protein , -3.0
+arCOG05989 , Transcriptional regulator, xre family , -3.0
+arCOG06331 , Uncharacterized conserved protein , -3.0
+arCOG06766 , Uncharacterized conserved protein , -3.0
+arCOG07235 , Uncharacterized conserved protein , -3.0
+arCOG07694 , Uncharacterized conserved protein , -3.0
+arCOG08343 , Uncharacterized conserved protein  , -3.0
+arCOG09179 , Uncharacterized conserved protein  , -3.0
+arCOG00145 , permease of the major facilitator superfamily  , -2.0
+arCOG00301 , Nitroreductase  , -2.0
+arCOG00396 , Predicted transcriptional regulator  , -2.0
+arCOG02212 , Polysaccharide biosynthesis protein, Mvin family  , -2.0
+arCOG02342 , Signal transduction histidine kinase, contains Cache and PAS domains  , -2.0
+arCOG02385 , Rec domain  , -2.0
+arCOG02652 , Coenzyme F420-reducing hydrogenase, beta subunit  , -2.0
+arCOG02723 , Glutamate-cysteine ligase family 2 , -2.0
+arCOG02795 , Predicted transcriptional regulator , -2.0
+arCOG03105 , Uncharacterized conserved protein , -2.0
+arCOG03159 , ABC-type Co2+ transport system, permease component  , -2.0
+arCOG03432 , Predicted membrane protein  , -2.0
+arCOG03877 , Uncharacterized conserved protein , -2.0
+arCOG04026 , Uncharacterized conserved protein , -2.0
+arCOG04295 , 3-methyladenine DNA glycosylase  , -2.0
+arCOG04384 , ABC-type cobalt transport system, periplasmic component  , -2.0
+arCOG04675 , Uncharacterized conserved protein , -2.0
+arCOG04687 , Uncharacterized conserved protein , -2.0
+arCOG04752 , Uncharacterized conserved protein in cobalamin operon , -2.0
+arCOG04960 , Uncharacterized conserved protein , -2.0
+arCOG04972 , Uncharacterized conserved protein  , -2.0
+arCOG05121 , Lysophospholipase L1 or related esterase  , -2.0
+arCOG05166 , Uncharacterized conserved protein , -2.0
+arCOG05380 , Predicted membrane protein  , -2.0
+arCOG06029 , Uncharacterized conserved protein , -2.0
+arCOG06071 , Uncharacterized conserved protein , -2.0
+arCOG07654 , Spore coat assembly protein  , -2.0
+arCOG07725 , Uncharacterized conserved protein , -2.0
+arCOG08185 , Unsupervized conserved protein family , -2.0
+arCOG08409 , Unsupervized conserved protein family , -2.0
+arCOG08462 , Uncharacterized conserved protein  , -2.0
+arCOG08543 , Unsupervized conserved protein family , -2.0
+arCOG09479 , Uncharacterized conserved protein , -2.0
+arCOG00080 , Predicted rRNA methylase  , -1.0
+arCOG00135 , permease of the major facilitator superfamily  , -1.0
+arCOG00229 , ABC-type tungstate transport system, permease component  , -1.0
+arCOG00346 , Uncharacterized conserved protein, DUF1121 , -1.0
+arCOG00573 , Succinate dehydrogenase/fumarate reductase, flavoprotein subunit  , -1.0
+arCOG00684 , Transposase , -1.0
+arCOG00710 , PIN domain containing protein , -1.0
+arCOG00787 , UvrD/Rep family helicase fused to exonuclease family domain , -1.0
+arCOG01137 , Thioesterase superfamily enzyme , -1.0
+arCOG01317 , Sodium:solute symporter  , -1.0
+arCOG01443 , Predicted HD superfamily hydrolase, possibly a nuclease  , -1.0
+arCOG01661 , alpha/beta superfamily hydrolase , -1.0
+arCOG01662 , alpha/beta superfamily hydrolase , -1.0
+arCOG01693 , RecA-superfamily ATPase implicated in signal transduction fused to 4VR domain , -1.0
+arCOG02448 , Uncharacterized Fe-S center protein  , -1.0
+arCOG02698 , Uncharacterized conserved protein, DUF1102 family , -1.0
+arCOG02959 , Predicted aminopeptidase  , -1.0
+arCOG02967 , NACHT family NTPase fused to HEAT repeats domain , -1.0
+arCOG03059 , Protein affecting phage T7 exclusion by the F plasmid  , -1.0
+arCOG03131 , Predicted DNA repair protein, contains HHH and endonuclease domain , -1.0
+arCOG03264 , Cell suface protein , -1.0
+arCOG03284 , Glycosyl hydrolase family 57 , -1.0
+arCOG03448 , Cytosine/uracil/thiamine/allantoin permease  , -1.0
+arCOG03683 , Serine/threonine protein kinase fused to HEAT repeat domain , -1.0
+arCOG03847 , CRISPR associated protein, COG1517 family , -1.0
+arCOG03936 , Transcriptional regulator AbrB , -1.0
+arCOG04316 , Uncharacterized conserved protein , -1.0
+arCOG04520 , Uncharacterized conserved protein  , -1.0
+arCOG04715 , Uncharacterized conserved protein  , -1.0
+arCOG04928 , CRISPR-associated protein , -1.0
+arCOG04946 , Predicted enzyme related to lactoylglutathione lyase  , -1.0
+arCOG05024 , HEPN domain containing protein , -1.0
+arCOG05137 , TPR repeats containing protein , -1.0
+arCOG05233 , Uncharacterized conserved protein  , -1.0
+arCOG05270 , ABC-type molybdenum transport system, ATPase component/photorepair protein PhrA  , -1.0
+arCOG05470 , Uncharacterized conserved protein , -1.0
+arCOG05512 , Uncharacterized conserved protein , -1.0
+arCOG05588 , Uncharacterized conserved protein , -1.0
+arCOG05853 , Uncharacterized conserved protein , -1.0
+arCOG06034 , Uncharacterized conserved protein , -1.0
+arCOG06449 , Uncharacterized conserved protein , -1.0
+arCOG06591 , Nucleic acid binding protein, OB-fold  , -1.0
+arCOG06592 , Uncharacterized conserved protein , -1.0
+arCOG06624 , Ribosomal L41E , -1.0
+arCOG06661 , Uncharacterized conserved protein , -1.0
+arCOG07112 , Uncharacterized conserved membrane protein , -1.0
+arCOG07167 , Uncharacterized conserved protein , -1.0
+arCOG07192 , Uncharacterized conserved protein , -1.0
+arCOG07214 , Uncharacterized conserved protein , -1.0
+arCOG07307 , Uncharacterized conserved protein , -1.0
+arCOG07716 , SWIM Zn-finger , -1.0
+arCOG07718 , Uncharacterized conserved protein , -1.0
+arCOG08131 , Uncharacterized conserved protein  , -1.0
+arCOG08242 , Uncharacterized conserved protein  , -1.0
+arCOG08453 , Uncharacterized conserved protein  , -1.0
+arCOG08498 , Uncharacterized conserved protein  , -1.0
+arCOG08561 , Unsupervized conserved protein family , -1.0
+arCOG08632 , Putative secreted protein , -1.0
+arCOG09021 , NUDIX family hydrolase , -1.0
+arCOG09068 , Unsupervized conserved protein family , -1.0
+arCOG09217 , Uncharacterized conserved protein  , -1.0
+arCOG09260 , Uncharacterized conserved protein  , -1.0
+arCOG00011 , Amino acid transporter  , 0.0
+arCOG00108 , Adenine specific DNA methylase Mod  , 0.0
+arCOG00183 , ABC-type dipeptide/oligopeptide/nickel transport system, ATPase component  , 0.0
+arCOG00197 , ABC-type uncharacterized transport system, ATPase component  , 0.0
+arCOG00256 , Prephenate dehydrogenase  , 0.0
+arCOG00830 , Sortase or related acyltransferase  , 0.0
+arCOG00889 , Adenine-specific DNA methylase containing a Zn-ribbon  , 0.0
+arCOG01002 , Xaa-Pro aminopeptidase  , 0.0
+arCOG01011 , Predicted transcriptional regulators containing the CopG/Arc/MetJ DNA-binding domain  , 0.0
+arCOG01063 , Predicted transcriptional regulator  , 0.0
+arCOG01082 , NUDIX family hydrolase  , 0.0
+arCOG01151 , Calcineurin-like phosphoesterase , 0.0
+arCOG01156 , Calcineurin-like phosphohydrolase  , 0.0
+arCOG01396 , UDP-N-acetylglucosamine 2-epimerase, MurG family  , 0.0
+arCOG01441 , CRISPR system related protein, AF0070 family , 0.0
+arCOG01507 , Uncharacterized conserved protein  , 0.0
+arCOG01636 , Cyclopropane fatty acid synthase or related methyltransferase , 0.0
+arCOG01787 , SAM-dependent methyltransferase , 0.0
+arCOG01789 , SAM-dependent methyltransferase , 0.0
+arCOG01793 , SAM-dependent methyltransferase , 0.0
+arCOG01968 , 2-phosphoglycerate kinase fused to 3H domain , 0.0
+arCOG02086 , S-layer domain  , 0.0
+arCOG02111 , Uncharacterized conserved protein , 0.0
+arCOG02122 , PIN domain containing protein , 0.0
+arCOG02217 , Predicted antitoxin associated with PIN domain , 0.0
+arCOG02234 , Heterodisulfide reductase, subunit A, polyferredoxin  , 0.0
+arCOG02318 , Sensory protein; contains PAS, HAMP and Methyl-accepting chemotaxis-like domain  , 0.0
+arCOG02615 , Uncharacterized conserved protein , 0.0
+arCOG02635 , Type II restriction enzyme, methylase subunit  , 0.0
+arCOG02820 , UDP-N-acetylmuramyl tripeptide synthase  , 0.0
+arCOG02889 , Predicted deacylase  , 0.0
+arCOG02998 , Uncharacterized conserved protein, contains double-stranded beta-helix domain , 0.0
+arCOG03068 , Phosphoglyceromutase  , 0.0
+arCOG03132 , Predicted transcriptional regulator  , 0.0
+arCOG03202 , Collagenase family protease  , 0.0
+arCOG03305 , ABC-type Fe3+-hydroxamate transport system, periplasmic component  , 0.0
+arCOG03317 , Retron-type reverse transcriptase  , 0.0
+arCOG03346 , Zinc-dependent metalloprotease, M12B family , 0.0
+arCOG03398 , Uncharacterized conserved protein , 0.0
+arCOG03497 , Uncharacterized conserved protein , 0.0
+arCOG03501 , Cell suface protein , 0.0
+arCOG03536 , Uncharacterized conserved protein , 0.0
+arCOG03598 , Uncharacterized conserved protein , 0.0
+arCOG03606 , Uncharacterized conserved protein , 0.0
+arCOG03681 , Uncharacterized conserved protein , 0.0
+arCOG03696 , Polyferredoxin  , 0.0
+arCOG03719 , CRISPR system related protein, RAMP superfamily , 0.0
+arCOG03767 , Uncharacterized conserved protein , 0.0
+arCOG03816 , Uncharacterized conserved protein , 0.0
+arCOG03892 , CRISPR system related protein, RAMP superfamily , 0.0
+arCOG03923 , PhiH1 repressor family protein, contains HTH domain  , 0.0
+arCOG03928 , Uncharacterized conserved protein  , 0.0
+arCOG03965 , Transposase related protein , 0.0
+arCOG03971 , Uncharacterized conserved protein , 0.0
+arCOG03976 , Uncharacterized conserved protein , 0.0
+arCOG04023 , Uncharacterized conserved protein , 0.0
+arCOG04070 , Ribosomal protein L3  , 0.0
+arCOG04534 , Uncharacterized conserved protein , 0.0
+arCOG04712 , Predicted glutathione S-transferase  , 0.0
+arCOG04762 , Nucleoside-diphosphate-sugar epimerase , 0.0
+arCOG04825 , Uncharacterized conserved protein , 0.0
+arCOG04890 , NADH:ubiquinone oxidoreductase 24 kD subunit  , 0.0
+arCOG04892 , Uncharacterized conserved protein , 0.0
+arCOG04952 , Uncharacterized conserved protein , 0.0
+arCOG04963 , permease of the drug/metabolite transporter (DMT) superfamily  , 0.0
+arCOG05000 , ABC-type transport system involved in multi-copper enzyme maturation, permease component  , 0.0
+arCOG05078 , Predicted sugar kinase  , 0.0
+arCOG05129 , Predicted transcriptional regulator  , 0.0
+arCOG05162 , Uncharacterized conserved protein , 0.0
+arCOG05163 , Uncharacterized conserved protein , 0.0
+arCOG05171 , Putative peptidoglycan-binding domain-containing protein  , 0.0
+arCOG05187 , Uncharacterized conserved protein , 0.0
+arCOG05226 , Uncharacterized conserved protein , 0.0
+arCOG05237 , Uncharacterized conserved protein , 0.0
+arCOG05240 , Autotransporter adhesin  , 0.0
+arCOG05258 , Uncharacterized conserved protein , 0.0
+arCOG05259 , Cupin domain , 0.0
+arCOG05310 , Uncharacterized conserved protein , 0.0
+arCOG05341 , permease of the major facilitator superfamily  , 0.0
+arCOG05347 , Uncharacterized conserved protein , 0.0
+arCOG05355 , Phosphoheptose isomerase  , 0.0
+arCOG05392 , Predicted integral membrane protein  , 0.0
+arCOG05398 , Uncharacterized conserved protein , 0.0
+arCOG05481 , Transposase , 0.0
+arCOG05523 , Uncharacterized conserved protein , 0.0
+arCOG05526 , Uncharacterized conserved protein , 0.0
+arCOG05715 , Uncharacterized conserved protein , 0.0
+arCOG05735 , Uncharacterized conserved protein , 0.0
+arCOG05761 , Predicted ATPase involved in replication control, Cdc46/Mcm family  , 0.0
+arCOG05862 , Uncharacterized conserved protein , 0.0
+arCOG05865 , Phosphoenolpyruvate carboxykinase (GTP)  , 0.0
+arCOG05882 , Uncharacterized conserved protein , 0.0
+arCOG05907 , Uncharacterized conserved protein , 0.0
+arCOG06009 , Uncharacterized conserved protein , 0.0
+arCOG06093 , Uncharacterized conserved protein , 0.0
+arCOG06147 , Uncharacterized conserved protein , 0.0
+arCOG06150 , Uncharacterized conserved protein , 0.0
+arCOG06153 , Uncharacterized conserved protein , 0.0
+arCOG06164 , Inactivated PIWI domain containing phage-defense protein , 0.0
+arCOG06207 , Uncharacterized conserved protein  , 0.0
+arCOG06348 , Uncharacterized conserved protein , 0.0
+arCOG06423 , Uncharacterized conserved protein , 0.0
+arCOG06454 , Uncharacterized conserved protein , 0.0
+arCOG06484 , Uncharacterized conserved protein , 0.0
+arCOG06492 , Uncharacterized conserved protein , 0.0
+arCOG06517 , Uncharacterized conserved protein , 0.0
+arCOG06562 , Uncharacterized conserved protein , 0.0
+arCOG06656 , Uncharacterized conserved protein , 0.0
+arCOG06677 , Alanine racemase  , 0.0
+arCOG06746 , Uncharacterized conserved protein , 0.0
+arCOG06800 , Uncharacterized conserved protein , 0.0
+arCOG06824 , Uncharacterized conserved protein , 0.0
+arCOG06862 , PKD repeats containing protein , 0.0
+arCOG06887 , Restriction endonuclease  , 0.0
+arCOG06890 , Uncharacterized conserved protein , 0.0
+arCOG07055 , Mn-containing catalase  , 0.0
+arCOG07069 , Uncharacterized conserved protein , 0.0
+arCOG07072 , Uncharacterized conserved protein , 0.0
+arCOG07073 , Uncharacterized conserved protein , 0.0
+arCOG07213 , Uncharacterized conserved protein , 0.0
+arCOG07262 , Uncharacterized conserved protein , 0.0
+arCOG07311 , Predicted transcriptional regulator, HTH domain , 0.0
+arCOG07557 , Uncharacterized conserved protein , 0.0
+arCOG07630 , Uncharacterized conserved protein , 0.0
+arCOG07634 , Uncharacterized conserved protein , 0.0
+arCOG07681 , Uncharacterized conserved protein , 0.0
+arCOG07800 , Uncharacterized conserved protein , 0.0
+arCOG07805 , Penicillin V acylase or related amidase  , 0.0
+arCOG07806 , ABC-type transport system involved in multi-copper enzyme maturation, permease component  , 0.0
+arCOG08100 , Uncharacterized conserved protein  , 0.0
+arCOG08123 , Uncharacterized conserved protein  , 0.0
+arCOG08252 , Uncharacterized conserved protein  , 0.0
+arCOG08289 , Unsupervized conserved protein family , 0.0
+arCOG08292 , Unsupervized conserved protein family , 0.0
+arCOG08323 , Uncharacterized conserved protein  , 0.0
+arCOG08858 , Uncharacterized conserved protein  , 0.0
+arCOG08903 , Uncharacterized conserved protein  , 0.0
+arCOG08914 , Uncharacterized conserved protein  , 0.0
+arCOG09326 , Uncharacterized conserved protein  , 0.0
+arCOG09399 , Unsupervized conserved protein family , 0.0
+arCOG09407 , Unsupervized conserved protein family , 0.0
+arCOG09880 , Unsupervized conserved protein family , 0.0
+arCOG00075 , 3'-phosphoadenosine 5'-phosphosulfate sulfotransferase (PAPS reductase)/FAD synthetase or related enzyme  , 1.0
+arCOG00237 , Di- and tricarboxylate transporter  , 1.0
+arCOG01022 , ABC-type branched-chain amino acid transport system, periplasmic component  , 1.0
+arCOG02011 , Na+/H+ antiporter  , 1.0
+arCOG02491 , WD40 repeats containing protein , 1.0
+arCOG02500 , NosD-like periplasmic protein , 1.0
+arCOG03156 , DNA endonuclease related to intein-encoded endonuclease  , 1.0
+arCOG03165 , Uncharacterized conserved protein , 1.0
+arCOG03259 , Cell suface protein , 1.0
+arCOG03508 , Uncharacterized conserved protein  , 1.0
+arCOG03724 , Uncharacterized conserved protein , 1.0
+arCOG03869 , Uncharacterized conserved protein , 1.0
+arCOG03999 , Clostripain family peptidase, C11 , 1.0
+arCOG04275 , Uncharacterized conserved protein , 1.0
+arCOG04317 , Predicted membrane protein  , 1.0
+arCOG04528 , Urea amidohydrolase (urease) gamma subunit  , 1.0
+arCOG04559 , Membrane transporter of cations and cationic drugs  , 1.0
+arCOG04730 , Uncharacterized conserved protein , 1.0
+arCOG04911 , Uncharacterized conserved protein , 1.0
+arCOG05239 , Predicted aminoglycoside phosphotransferase  , 1.0
+arCOG05668 , Uncharacterized conserved protein , 1.0
+arCOG05709 , Uncharacterized conserved protein , 1.0
+arCOG05728 , permease of the major facilitator superfamily  , 1.0
+arCOG05732 , Uncharacterized conserved protein , 1.0
+arCOG05893 , Uncharacterized conserved protein , 1.0
+arCOG06166 , Transcriptional regulator, ArsR family , 1.0
+arCOG06168 , Disulfide bond formation protein DsbB  , 1.0
+arCOG06237 , Transcriptional regulator (Lrp/AsnC family) , 1.0
+arCOG06278 , Uncharacterized conserved protein , 1.0
+arCOG06428 , Uncharacterized conserved protein , 1.0
+arCOG06604 , Uncharacterized conserved protein , 1.0
+arCOG06639 , Uncharacterized conserved protein , 1.0
+arCOG06764 , CYTH-like metallophosphatase, VTC family , 1.0
+arCOG07000 , Uncharacterized conserved protein , 1.0
+arCOG07029 , Uncharacterized conserved protein , 1.0
+arCOG07090 , Uncharacterized conserved protein , 1.0
+arCOG07132 , Uncharacterized conserved protein , 1.0
+arCOG07225 , Uncharacterized conserved protein , 1.0
+arCOG07577 , Uncharacterized conserved protein , 1.0
+arCOG07683 , Predicted nuclease of the RecB family  , 1.0
+arCOG08094 , Uncharacterized conserved protein  , 1.0
+arCOG08138 , Unsupervized conserved protein family , 1.0
+arCOG08200 , Predicted transporter , 1.0
+arCOG08206 , Uncharacterized conserved protein  , 1.0
+arCOG08227 , Uncharacterized conserved membrane protein , 1.0
+arCOG08348 , Uncharacterized conserved protein  , 1.0
+arCOG08358 , Uncharacterized conserved protein  , 1.0
+arCOG08377 , Uncharacterized conserved protein  , 1.0
+arCOG08568 , Virus associated protein, V3 family , 1.0
+arCOG08915 , Uncharacterized conserved protein  , 1.0
+arCOG09935 , Unsupervized conserved protein family , 1.0
+arCOG00732 , Transcriptional regulator, MarR family , 2.0
+arCOG00764 , Formylmethanofuran dehydrogenase subunit E  , 2.0
+arCOG01569 , Small-conductance mechanosensitive channel  , 2.0
+arCOG01584 , Transcriptional regulator (Lrp/AsnC family) , 2.0
+arCOG01847 , Serine acetyltransferase  , 2.0
+arCOG02332 , Signal transduction histidine kinase, contains REC and PAS-like domains  , 2.0
+arCOG02425 , Uncharacterized conserved protein , 2.0
+arCOG02671 , CRISPR system related protein, RAMP superfamily , 2.0
+arCOG03051 , Nucleotide-binding protein,  UspA family , 2.0
+arCOG03197 , Uncharacterized conserved protein , 2.0
+arCOG03718 , CRISPR system related protein, RAMP superfamily , 2.0
+arCOG05159 , Archaeal serine protease  , 2.0
+arCOG05517 , Uncharacterized conserved protein , 2.0
+arCOG05782 , Uncharacterized conserved protein , 2.0
+arCOG06907 , Uncharacterized conserved protein , 2.0
+arCOG08136 , Uncharacterized conserved protein  , 2.0
+arCOG08537 , Uncharacterized conserved protein  , 2.0
+arCOG09814 , Uncharacterized conserved protein  , 2.0
+arCOG02191 , Predicted Na+-dependent transporter  , 3.0
+arCOG03884 , Putative transposon-encoded protein  , 3.0
+arCOG03951 , Membrane-associated phospholipid phosphatase  , 3.0
+arCOG05826 , Uncharacterized conserved protein , 3.0
+arCOG06157 , Uncharacterized conserved protein , 3.0
+arCOG06181 , Thiol-disulfide isomerase or thioredoxin  , 3.0
+arCOG06199 , Uncharacterized conserved protein , 3.0
+arCOG04725 , Predicted transcriptional regulator , contains HTH domain , 4.0
+arCOG05025 , Uncharacterized conserved protein , 4.0
+arCOG07017 , Uncharacterized conserved protein , 4.0
+arCOG03100 , Multisubunit Na+/H+ antiporter, MnhE subunit  , 5.0
+arCOG04870 , Tetrahydromethanopterin S-methyltransferase, subunit E  , 10.0
