@@ -128,6 +128,7 @@ The main logic for the Crank program lies in `Crank.py` with the main control lo
     - GenesFilePruner.py - a hackish script to select trees from one GenesFile 
       and save them to a new GenesFile
     - GenesFileViz.py - Creates an image of every tree in a GenesFile
+    - LeafCounter.py - Counts the number of leaves in a GenesFile
     - LeafStripper.py - When reducing the number of species being analyzed, 
       remove leaves from species and gene trees (in GenesFiles) matching those 
       species
