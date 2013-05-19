@@ -139,6 +139,8 @@ The main logic for the Crank program lies in `Crank.py` with the main control lo
       pretty graphs and tree images
     - TreeCompare.py - Compare the structure of two trees
     - TreeVisulizer.py - Converts a tree file into an image of the tree
+    - leaf\_overlap - Finds coverage of different species by each tree in a 
+      GenesFile
     
 ### Third party files/packages ###
 - include
