@@ -109,8 +109,7 @@ The main logic for the Crank program lies in `Crank.py` with the main control lo
   Handles submitting jobs to a local queue and sending jobs to other queues over 
   scp 
 - Tree.py - Contains Tree (general tree reading/manipulation), SpeciesTree, and 
-  GeneTree classes.  A lot of computation is actually handed off to the dendropy 
-  and ete packages
+  GeneTree classes.  A lot of computation is actually handed off to ete package
 - tests - directory containing very incomplete tests of Crank
     - TreeTest.py - actually relatively well tested
     - CogTest.py
@@ -146,8 +145,6 @@ The main logic for the Crank program lies in `Crank.py` with the main control lo
 ### Third party files/packages ###
 - include
     - dtl - The Ranger-DTL executable implementation of AnGST
-- dendropy - Tree manipulation package, currently only used to calculate 
-  Robinson-Foulds distance
 - ete - Another Tree manipulation package, forms the basis of Tree.py
 
 ### System packages ###
