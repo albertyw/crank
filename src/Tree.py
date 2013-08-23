@@ -10,15 +10,8 @@ import csv
 import random
 import re
 import os
-import sys
 
-sys.path.append('./ete')
-sys.path.append(os.path.dirname(__file__)+'/ete')
-from etetree import Tree as EteTree
-sys.path.append('./utilities')
-sys.path.append(os.path.dirname(__file__)+'/utilities')
-from ReconcileSingle import reconcile_single
-
+from ete.etetree import Tree as EteTree
 
 class Tree(object):
     """

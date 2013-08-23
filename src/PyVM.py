@@ -43,7 +43,7 @@ def MemoryUpdate(print_msg=None,str_return=False):
             return print_str + "\n"
         else:
             print print_str
-        
+
 def TotalMemory():
     '''print memory usage stats in MB.
     '''
