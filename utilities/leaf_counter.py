@@ -5,7 +5,7 @@ This file reads a GenesFile and creates a CSV counting the number of leaves
 import csv
 import operator
 import sys
-sys.path.append('/home/albertyw/crank/utilities')
+
 from GenesFileAnnotator import AnnotateGenesFile
 
 genes_file_input_location = "/home/albertyw/greg/ribosomalGenesFileAnnotated"

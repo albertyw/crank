@@ -4,7 +4,7 @@ This file reads a genes file and annotates trees
 
 import csv
 import sys
-sys.path.append('/home/albertyw/crank')
+sys.path.append('/home/albertyw/crank/src')
 from GenesFile import GenesFile
 import Tree
 

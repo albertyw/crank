@@ -4,7 +4,8 @@ set of gene trees shares, then writes the output to an html file
 """
 
 import sys
-sys.path.append('/home/albertyw/crank/')
+
+sys.path.append('/home/albertyw/crank/src/')
 import GenesFile
 import Tree
 
@@ -22,8 +23,8 @@ def find_leaves(tree):
 
 def find_overlapping_leaves(leaves_a, leaves_b):
     return len(leaves_a.intersection(leaves_b))
-    
-    
+
+
 gene_location = '/home/albertyw/leaf_overlap/GenesFile'
 gene_location = sys.argv[1]
 a = GenesFile.GenesFile(gene_location)

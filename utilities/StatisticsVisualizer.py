@@ -1,11 +1,10 @@
 """
-This class reads data from Crank and visualizes the statistics and 
+This class reads data from Crank and visualizes the statistics and
 """
 
 import os, shutil, sys, tempfile
 
-sys.path.append('../')
-sys.path.append(os.path.dirname(__file__)+'/../')
+sys.path.append('/home/albertyw/crank/src/')
 import Tree
 
 sys.path.append('../../itol')
@@ -19,18 +18,18 @@ import matplotlib.pyplot as pyplot
 
 class CrankStatisticsVisualizer:
     """
-    This program reads the output from CrankStatistics and creates charts 
+    This program reads the output from CrankStatistics and creates charts
     from it
     """
-    
+
     def __init__(self, output_directory):
         self.output_directory = output_directory
         self.stats_directory = self.output_directory+'/stats/'
         pass
-    
+
     def file_lister(self, file_prefix):
         """
-        For per iteration statistics, return a list of all the file locations 
+        For per iteration statistics, return a list of all the file locations
         that have been saved to
         """
         i = 0
@@ -44,7 +43,7 @@ class CrankStatisticsVisualizer:
                 files.pop(i)
         files = [self.stats_directory+file_name for file_name in files]
         return files
-        
+
     def xy_graph(self, file_name):
         """
         Read the input files as a list of (x coordinate, y coordinate)
@@ -52,7 +51,7 @@ class CrankStatisticsVisualizer:
         file_handle = open(file_name, 'r')
         data = file_handle.read()
         file_handle.close()
-        
+
         data = eval(data)
         x_axis = [item[0] for item in data]
         y_axis = [item[1] for item in data]
@@ -60,32 +59,32 @@ class CrankStatisticsVisualizer:
         pyplot.title(file_name[file_name.rfind('/')+1:])
         pyplot.savefig(file_name+'.png')
         pyplot.clf()
-        
+
     def xxi_graph(self, file_name):
         """
-        Read the input files as a list of y coordinates, where the x coordinates 
+        Read the input files as a list of y coordinates, where the x coordinates
         are the index number
         """
         file_handle = open(file_name, 'r')
         data = file_handle.read()
         file_handle.close()
-        
+
         data = list(eval(data))
         y_axis = data
         pyplot.plot(y_axis, 'ro')
         pyplot.title(file_name[file_name.rfind('/')+1:])
         pyplot.savefig(file_name+'.png')
         pyplot.clf()
-        
+
     def triple_graph(self, file_name, label1, label2, label3):
         """
-        Read the input files as three graphs (y1, y2, y3) where the x 
+        Read the input files as three graphs (y1, y2, y3) where the x
         coordinates are the index number
         """
         file_handle = open(file_name, 'r')
         data = file_handle.read()
         file_handle.close()
-        
+
         data = list(eval(data))
         y_axis0 = [item[0] for item in data]
         y_axis1 = [item[1] for item in data]
@@ -98,7 +97,7 @@ class CrankStatisticsVisualizer:
         pyplot.legend()
         pyplot.savefig(file_name+'.png')
         pyplot.clf()
-        
+
     def make_a_tree(self, tree, save_location):
         """
         Given a tree, render the tree using Itol and save to the save_location
@@ -106,13 +105,13 @@ class CrankStatisticsVisualizer:
         # Format tree structure
         tree_structure = tree.tree_structure
         tree_structure = tree_structure.replace('>','')
-        
+
         # Write tree structure to a tempfile
         temp = tempfile.NamedTemporaryFile()
         temp.write(tree_structure)
         temp.seek(0)
         temp.flush()
-        
+
         # Upload to itol
         itol = Itol.Itol()
         itol.add_variable('treeFile',temp.name)
@@ -125,7 +124,7 @@ class CrankStatisticsVisualizer:
             print itol.comm.upload_output
             print
             return
-            
+
         # Download from itol
         itol_exporter = itol.get_itol_export()
         itol_exporter.set_export_param_value('format','pdf')
@@ -134,7 +133,7 @@ class CrankStatisticsVisualizer:
         itol_exporter.set_export_param_value('fontSize','20')
         itol_exporter.export(save_location)
         temp.close()
-        
+
     def make_graphs(self):
         """
         Convert the data into files
@@ -158,7 +157,7 @@ class CrankStatisticsVisualizer:
             for file_name in files:
                 print file_name
                 self.triple_graph(file_name, label1, label2, label3)
-    
+
     def make_trees(self):
         """
         Create trees from the base.tree outputs
@@ -184,7 +183,7 @@ class CrankStatisticsVisualizer:
                 self.make_a_tree(renamed_tree, tree_location+'/base_'+str(csv_files[file_location])+'.pdf')
                 print tree_location+'/base_'+str(csv_files[file_location])+'.pdf'
             i += 1
-        
+
         # Copy first and last trees
         i -=1
         shutil.copy(self.output_directory+'/1/base.pdf',\
@@ -206,7 +205,7 @@ class CrankStatisticsVisualizer:
                 print self.output_directory+'/Iteration'+str(i)+'_'+str(csv_files[file_location])+'.pdf'
             except:
                 sys.exc_clear()
-        
+
 
 if __name__ == "__main__":
     viz = CrankStatisticsVisualizer(sys.argv[1])

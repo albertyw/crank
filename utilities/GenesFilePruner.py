@@ -4,7 +4,8 @@ condition, then saves those gene trees into a different GenesFile
 
 """
 import sys
-sys.path.append("/home/albertyw/crank")
+
+sys.path.append('/home/albertyw/crank/src/')
 import Tree
 import GenesFile
 

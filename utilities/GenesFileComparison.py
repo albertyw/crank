@@ -4,7 +4,7 @@ This file reads two genes files and compares the gene trees in both
 
 import csv
 import sys
-sys.path.append('/home/albertyw/crank')
+sys.path.append('/home/albertyw/crank/src/')
 from GenesFile import GenesFile
 import Tree
 

@@ -7,7 +7,7 @@ import os
 import sys
 import tempfile
 
-sys.path.append('/home/albertyw/crank')
+sys.path.append('/home/albertyw/crank/src/')
 from GenesFile import GenesFile
 import Tree
 

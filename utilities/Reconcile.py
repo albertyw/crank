@@ -8,9 +8,7 @@ import csv
 import os
 import sys
 import time
-sys.path.append('../')
-sys.path.append(os.path.dirname(__file__)+'/../')
-sys.path.append('/home/albertyw/crank/')
+sys.path.append('/home/albertyw/crank/src/')
 
 import Cog
 import GenesFile

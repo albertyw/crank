@@ -1,6 +1,6 @@
 import sys
 
-crank_path = "/home/albertyw/crank/"
+crank_path = "/home/albertyw/crank/src/"
 test_path = "/home/albertyw/tester/artificial_tests/mukul3/control/no_weight/"
 sys.path.append(crank_path)
 import Crank

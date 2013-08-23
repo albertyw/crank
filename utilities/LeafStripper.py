@@ -6,7 +6,7 @@ reconciliations and therefore runtime.
 
 """
 import sys
-sys.path.append("/home/albertyw/crank")
+sys.path.append('/home/albertyw/crank/src/')
 import Tree
 import GenesFile
 

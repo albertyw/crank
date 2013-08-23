@@ -1,11 +1,12 @@
 """
-This program reads gene trees and computes the number of overlapping gene trees 
-for every set of species.  
+This program reads gene trees and computes the number of overlapping gene trees
+for every set of species.
 """
 
 
 import csv, sys
-sys.path.append('/home/albertyw/crank/')
+
+sys.path.append('/home/albertyw/crank/src/')
 import GenesFile
 import Tree
 
@@ -19,14 +20,14 @@ def find_leaves(tree):
     leaves = tree.tree.leaf_dict.keys()
     leaves = set([leaf[:leaf.find('.')] for leaf in leaves])
     return leaves
-    
+
 def add_new_species(matrix, species):
     matrix[species] = dict({})
     for leaf in matrix.keys():
         matrix[leaf][species] = 0
         matrix[species][leaf] = 0
     return matrix
-    
+
 
 def num_to_hex(number):
     number = int(round(number))
@@ -44,7 +45,7 @@ def num_to_hex(number):
         return 'EE'
     else:
         return 'FF'
-        
+
 def calculate_color(number, largest_num, smallest_num):
     percentage = 1.0*(number-smallest_num)/(largest_num-smallest_num)
     if percentage >.5:
@@ -72,8 +73,8 @@ def find_max_min_num(matrix):
             if smallest_num > matrix[a][b]:
                 smallest_num = matrix[a][b]
     return largest_num, smallest_num
-        
-    
+
+
 gene_location = sys.argv[1]
 a = GenesFile.GenesFile(gene_location)
 matrix = dict({})
@@ -87,7 +88,7 @@ for tree in a.trees:
     for leaf in leaves:
         for leaf_b in leaves:
             matrix[leaf][leaf_b] += 1
-            
+
 
 largest_num, smallest_num = find_max_min_num(matrix)
 print '<b>Largest Overlap:</b>'+str(largest_num)
