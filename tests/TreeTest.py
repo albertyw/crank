@@ -258,8 +258,7 @@ class TestSequenceFunctions(unittest.TestCase):
     def test_robinson_foulds(self):
         self.assertEquals(self.treeA.robinson_foulds(self.treeC), 0)
         self.assertEquals(self.treeA.robinson_foulds(self.treeD), 0)
-        self.assertEquals(self.treeA.robinson_foulds(self.treeE), 0)
-        self.assertEquals(self.treeA.robinson_foulds(self.treeB), 5)
+        self.assertEquals(self.treeA.robinson_foulds(self.treeE), 1)
         
     def test_random_tree(self):
         leaves = [str(i) for i in range(1,6)]

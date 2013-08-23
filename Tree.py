@@ -33,25 +33,25 @@ class Tree(object):
             tree_structure += ';'
         self.tree_structure = tree_structure
         self.ete = EteTree(tree_structure)
-    
+
     def __repr__(self):
         return self.ete.write(format=5)
-    
+
     def num_leaves(self):
         """
         Returns the number of leaves on the tree as an int
         """
         return len(self.ete)
-    
+
     ### Tree Comparisons ###
     def __eq__(self, other_tree):
         return self.equals(other_tree)
-    
+
     def equals(self, other_tree):
         """
         Returns whether the tree is the same as another tree with a boolean
-        Both trees must be the same type (Tree, SpeciesTree, GeneTree) and 
-        structure, though not necessarily the same string representation.  
+        Both trees must be the same type (Tree, SpeciesTree, GeneTree) and
+        structure, though not necessarily the same string representation.
         """
         if type(self) != type(other_tree):
             return False
@@ -63,14 +63,14 @@ class Tree(object):
             if node not in other_tree_nodes:
                 return False
         return True
-    
+
     def equals_structure(self, other_tree):
         """
-        Like equals() but disregarding branch lengths, only with regards to 
+        Like equals() but disregarding branch lengths, only with regards to
         tree structure and leaf names
         """
         return self.standardize_branch_lengths().equals(other_tree.standardize_branch_lengths())
-        
+
     ### Root/Unroot Functions ###
     def is_rooted(self):
         """ Returns whether the tree is rooted or not as a boolean """
@@ -82,7 +82,7 @@ class Tree(object):
             return True
         if len(self.ete.get_children()) > 2:
             return False
-        
+
     def get_root(self):
         """
         Get the root node of the Tree
@@ -90,7 +90,7 @@ class Tree(object):
         if self.is_rooted():
             return self.get_leaf_string()
         return None
-        
+
     def do_root(self, outgroup_leaves):
         """
         Root the tree at the node and return a new Tree instance of it
@@ -108,7 +108,7 @@ class Tree(object):
         new_tree.ete.set_outgroup(outgroup)
         new_tree = new_tree.ete.write(format=5)
         return self.__class__(new_tree)
-        
+
     def do_unroot(self):
         """
         Unroot the tree and return a new Tree instance of it
@@ -121,7 +121,7 @@ class Tree(object):
         else:
             tree.unroot()
         return Tree(tree.write(format=5))
-    
+
     ### Node Comparisons ###
     @staticmethod
     def get_node_leaves(node_string):
@@ -130,12 +130,12 @@ class Tree(object):
         """
         leaf_list = node_string.split('-')
         return leaf_list
-        
+
     def find_node(self, node, exact_match = True):
         """
-        This method finds the node from the self.tree that contains the 
-        node; if exact_match is True, then node must match the 
-        found node exactly (in any order).  Else, it'll return the closest 
+        This method finds the node from the self.tree that contains the
+        node; if exact_match is True, then node must match the
+        found node exactly (in any order).  Else, it'll return the closest
         parent node
         """
         node_leaves = Tree.get_node_leaves(node)
@@ -153,20 +153,20 @@ class Tree(object):
             if set(node.get_leaf_names()) != set(node_leaves):
                 return None
         return node
-        
+
     def get_node_list(self):
         """
         Get a list of nodes that are in the tree
         """
         return self.ete.get_descendants()
-        
+
     @staticmethod
     def is_sibling(node1, node2):
         """
         Returns whether node1 and node2 are sibling nodes as a boolean
         """
         return node2 in node1.get_sisters()
-        
+
     def get_leaf_string(self):
         """
         Get a dash separated string of leaves
@@ -174,10 +174,10 @@ class Tree(object):
         leaves = self.ete.get_leaf_names()
         leaves.sort()
         return '-'.join(leaves)
-        
+
     def find_ancestor(self, node):
         """
-        This method finds all the ancestors of a node on self.tree from the 
+        This method finds all the ancestors of a node on self.tree from the
         node itself to the root.  node is a string and the output is a list
         """
         if type(node) == str:
@@ -187,23 +187,23 @@ class Tree(object):
             node = node.up
             ancestors.append(copy.deepcopy(node))
         return ancestors
-        
+
     def find_traversal_length(self, node1, node2):
         """
-        This method returns a list of nodes needed to traverse from node1 to 
-        node2.  The length of the returned list essentially finds how closely 
+        This method returns a list of nodes needed to traverse from node1 to
+        node2.  The length of the returned list essentially finds how closely
         related node1 and node2 is
         """
         node1 = self.find_node(node1)
         node2 = self.find_node(node2)
         return int(node1.get_distance(node2, topology_only = True))
-        
+
     def monophyly(self, species, require_all=False):
         """
-        This method looks at the tree and returns true if the list of nodes is 
+        This method looks at the tree and returns true if the list of nodes is
         monophyletic (all in one clade, with no missing members)
         nodes should be a list of all species to be considered
-        if require_all is True, then this will return False if the species aren't found 
+        if require_all is True, then this will return False if the species aren't found
         """
         if not require_all:
             species = [specie for specie in species if specie in self.ete.get_leaf_names()]
@@ -212,8 +212,8 @@ class Tree(object):
         if self.find_node('-'.join(species), True) == None:
             return False
         return True
-        
-        
+
+
     ### Tree Operations ###
     def standardize_branch_lengths(self):
         """
@@ -222,10 +222,10 @@ class Tree(object):
         new_tree = self.tree_structure
         new_tree = re.sub(r':[0-9\.e\-]*',':1.0', new_tree)
         return self.__class__(new_tree)
-    
+
     def rename_leaves(self, rename_dict = None, csv_file = None):
         """
-        Returns a new tree with all leaves renamed based on the csv file or 
+        Returns a new tree with all leaves renamed based on the csv file or
         rename_dict
         CSV format is:
         find_string, replace_string
@@ -244,7 +244,7 @@ class Tree(object):
             new_tree = new_tree.replace(old_name+':', new_name+':')
         new_tree = self.__class__(new_tree)
         return new_tree
-        
+
     def remove_leaves(self, leaves):
         """
         Remove each of the leaves in the argument from the tree and return a new
@@ -256,18 +256,18 @@ class Tree(object):
                 continue
             leaves_to_delete = new_tree.ete.get_leaves_by_name(leaf)
             [leaf.delete() for leaf in leaves_to_delete]
-            
+
         if new_tree.get_node_list() == []:
             new_tree = self.__class__('();')
         else:
             new_tree = self.__class__(str(new_tree))
         return new_tree
-        
-        
+
+
     def standardize_leaf_names(self):
         """
-        Since PhyML changes leaf names into >Name.GeneNum, this function turns 
-        leaf names back to normal notation and returns it as the string representation 
+        Since PhyML changes leaf names into >Name.GeneNum, this function turns
+        leaf names back to normal notation and returns it as the string representation
         of a new tree
         """
         # Remove outer parenthesis around root node and remove branch lengths
@@ -278,36 +278,34 @@ class Tree(object):
             tree = str(tree)
         # Remove '>'
         tree = tree.replace('>','')
-        
+
         # Remove gene labels from nodes (everything after the period)
         tree = re.sub(r'([(,][A-Za-z0-9]*)\.[0-9]*', r'\1', str(tree))
-        
+
         # Add a semicolon
         if tree[-1] != ';':
             tree += ';'
         return tree
-        
+
     def standardize_sister_ordering(self):
         """
-        Although a tree is technically the same no matter the order of sister 
-        nodes as expressed in a newick file, RANGER may consider them different 
-        trees and give different reconciliation events.  This orders sister 
+        Although a tree is technically the same no matter the order of sister
+        nodes as expressed in a newick file, RANGER may consider them different
+        trees and give different reconciliation events.  This orders sister
         branches so they are deterministic
-        
+
         Assumes leaves are unique
         """
         new_tree = copy.copy(self.ete)
         new_tree.sort_descendants()
         new_tree = self.__class__(new_tree.write(format=5))
         return new_tree
-        
+
     def robinson_foulds(self, other_tree):
         """
         Calculate the Robinson-Foulds score of this tree versus the other tree
         """
-        tree1 = DendroPyTree.get_from_string(self.tree_structure, 'newick', allow_duplicate_taxon_labels=True)
-        tree2 = DendroPyTree.get_from_string(other_tree.tree_structure, 'newick', allow_duplicate_taxon_labels=True)
-        return tree1.symmetric_difference(tree2)
+        return self.ete.robinson_foulds(other_tree.ete)[0]
     @staticmethod
     def random_tree(leaf_names, rooted=True):
         """
@@ -319,27 +317,27 @@ class Tree(object):
         if not rooted:
             tree = tree.do_unroot()
         return tree
-    
-        
+
+
 class SpeciesTree(Tree):
     """
     Subclass of Tree, used for operations specific to species trees
     """
-    
+
     def spr(self, prune, graft):
         """
-        SPR the current tree with the supplied prune and graft nodes and 
-        return the new tree.  
+        SPR the current tree with the supplied prune and graft nodes and
+        return the new tree.
         prune and graft are string representations
         """
         new_tree = copy.deepcopy(self)
         prune = new_tree.find_node(prune)
         graft = new_tree.find_node(graft)
-        
+
         old_parent = prune.up
         old_parent.delete()
         prune.detach()
-        
+
         ancestor = graft.up
         ancestor.remove_child(graft)
         new_parent = EteTree()
@@ -348,31 +346,31 @@ class SpeciesTree(Tree):
         new_parent.add_child(graft)
         new_parent.add_child(prune)
         return SpeciesTree(new_tree.ete.write(format=5))
-        
+
     def nni(self, node1, node2):
         """
-        Do a Nearest Neighbor Interchange between node1 and node2 and return 
+        Do a Nearest Neighbor Interchange between node1 and node2 and return
         the new tree
         node1 and node2 are string representations
         """
-        
+
         new_tree = copy.deepcopy(self)
         node1 = new_tree.find_node(node1)
         node2 = new_tree.find_node(node2)
-        
+
         node1_parent = node1.up
         node2_parent = node2.up
-        
+
         node1.detach()
         node2.detach()
-        
+
         node1_parent.add_child(node2)
         node2_parent.add_child(node1)
         return SpeciesTree(new_tree.ete.write(format=5))
-        
+
     def possible_sprs(self):
         """
-        Find the total possible unique SPRs that can be made with the current 
+        Find the total possible unique SPRs that can be made with the current
         species tree
         The returned possibilities do NOT include SPRs
         1.  between siblings - no change
@@ -407,10 +405,10 @@ class SpeciesTree(Tree):
                 possible_sprs.append((node1, node2))
         possible_sprs = [('-'.join(node1.get_leaf_names()), '-'.join(node2.get_leaf_names())) for (node1, node2) in possible_sprs]
         return possible_sprs
-        
+
     def possible_nnis(self):
         """
-        Find the number of possible unique NNIs that can be made with the current 
+        Find the number of possible unique NNIs that can be made with the current
         species tree
         The returned possibilities do NOT include nnis
         1.  between siblings - no change
@@ -445,37 +443,37 @@ class SpeciesTree(Tree):
                 possible_nnis.append((node1, node2))
         possible_nnis = [('-'.join(node1.get_leaf_names()), '-'.join(node2.get_leaf_names())) for (node1, node2) in possible_nnis]
         return possible_nnis
-    
-    
-    
+
+
+
 class GeneTree(Tree):
     """
     Subclass of Tree, used for operations specific to gene trees
     """
     def spr(self, prune, graft):
         """
-        Raise a NotImplemented Error because, although it is possible to spr 
+        Raise a NotImplemented Error because, although it is possible to spr
         this tree, there is no reason to do an spr on a gene tree
         """
         raise NotImplementedError("Why are you trying to SPR a Gene Tree?")
-        
+
     def unique_leaves(self):
         """
-        Return a set of strings of unique leaves (the set of species) covered 
+        Return a set of strings of unique leaves (the set of species) covered
         by the gene tree
         """
         leaves = self.ete.get_leaf_names()
         leaves = [leaf[:leaf.find('.')] for leaf in leaves]
         leaves = set(leaves)
         return leaves
-        
+
     def calculate_weight(self):
         """
-        Calculate a weight for the gene tree that is directly proportional to the 
-        span of the tree (# of unique species) and indirectly proportional to the 
+        Calculate a weight for the gene tree that is directly proportional to the
+        span of the tree (# of unique species) and indirectly proportional to the
         number of repeats
         """
-        
+
         #species_tree = "((((((((Aerpe:1.0,Hypbu:1.0):1.0,Ignho:1.0):1.0,(Deska:1.0,Stama:1.0):1.0):1.0,(Metse:1.0,(((((Sul04:1.0,Sul27:1.0):1.0,SuliM:1.0):1.0,((Sul14:1.0,Sul51:1.0):1.0,SuliL:1.0):1.0):1.0,Sulso:1.0):1.0,(Sulac:1.0,Sulto:1.0):1.0):1.0):1.0):1.0,((Calma:1.0,(((Pyrae:1.0,Pyrar:1.0):1.0,(Pyris:1.0,Thene:1.0):1.0):1.0,Pyrca:1.0):1.0):1.0,Thepe:1.0):1.0):1.0,((Censy:1.0,Nitma:1.0):1.0,Korcr:1.0):1.0):1.0,Naneq:1.0):1.0,((((Arcfu:1.0,(((((Halla:1.0,Halwa:1.0):1.0,(Halsa:1.0,Halsp:1.0):1.0):1.0,(((Halma:1.0,Halmu:1.0):1.0,Halut:1.0):1.0,Natph:1.0):1.0):1.0,((((Matpa:1.0,Metbo:1.0):1.0,Metcu:1.0):1.0,Methu:1.0):1.0,Metla:1.0):1.0):1.0,(((((Metac:1.0,Metma:1.0):1.0,Metba:1.0):1.0,Metbu:1.0):1.0,Uncme:1.0):1.0,Metsa:1.0):1.0):1.0):1.0,(Picto:1.0,(Theac:1.0,Thevo:1.0):1.0):1.0):1.0,(((((((MetC6:1.0,MetC7:1.0):1.0,(MetmC:1.0,Metmp:1.0):1.0):1.0,Metva:1.0):1.0,Metae:1.0):1.0,((Metfe:1.0,Metja:1.0):1.0,Metvu:1.0):1.0):1.0,((Metsm:1.0,Metth:1.0):1.0,Metst:1.0):1.0):2.0,Metka:1.0):1.0):0.5,(((Pyrab:1.0,Pyrho:1.0):1.0,Pyrfu:1.0):1.0,(((Thega:1.0,Theko:1.0):1.0,Theon:1.0):1.0,Thesi:1.0):1.0):1.0):0.5):1.0"
         #cog = reconcile_single(species_tree, self)
         #numhgts = str(cog.events).count('hgt')
@@ -495,7 +493,7 @@ class GeneTree(Tree):
             repeats += leaves.count(leaf)-1
         weight = 1.0 * len(set(leaves)) / (repeats)
         return weight
-        
+
         # Weight = (unique species) / sum((number of leaves)/(1 species))
         leaves = [leaf[:leaf.find('.')] for leaf in self.ete.get_leaf_names()]
         repeats = 1
@@ -504,7 +502,7 @@ class GeneTree(Tree):
         weight = 1.0 * len(leaves) / repeats
         return weight
         """
-        
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
