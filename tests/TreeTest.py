@@ -125,7 +125,7 @@ class TestSequenceFunctions(unittest.TestCase):
     def test_find_node(self):
         self.assertEqual(str(self.treeA.find_node("1.6")), "\n--1.6")
         self.assertEqual(self.treeA.find_node("10.7-1.6"), None)
-        self.assertEqual(str(self.treeA.find_node("10.7-1.6", False)), "\n     /-1.6\n----|\n    |     /-10.7\n     \\---|\n          \\-5.8")
+        self.assertEqual(str(self.treeA.find_node("10.7-1.6", False)), "\n   /-1.6\n--|\n  |   /-10.7\n   \\-|\n      \\-5.8")
         
     def test_get_node_list(self):
         nodes = self.treeA.get_node_list()

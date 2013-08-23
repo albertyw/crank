@@ -1,29 +1,29 @@
-__VERSION__="ete2-2.1rev544" 
+__VERSION__="ete2-2.2rev1026"
 # -*- coding: utf-8 -*-
 # #START_LICENSE###########################################################
 #
 #
 # This file is part of the Environment for Tree Exploration program
 # (ETE).  http://ete.cgenomics.org
-#  
+#
 # ETE is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-#  
+#
 # ETE is distributed in the hope that it will be useful, but WITHOUT
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
 # or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 # License for more details.
-#  
+#
 # You should have received a copy of the GNU General Public License
 # along with ETE.  If not, see <http://www.gnu.org/licenses/>.
 #
-# 
+#
 #                     ABOUT THE ETE PACKAGE
 #                     =====================
-# 
-# ETE is distributed under the GPL copyleft license (2008-2011).  
+#
+# ETE is distributed under the GPL copyleft license (2008-2011).
 #
 # If you make use of ETE in published work, please cite:
 #
@@ -31,17 +31,17 @@ __VERSION__="ete2-2.1rev544"
 # ETE: a python Environment for Tree Exploration. Jaime BMC
 # Bioinformatics 2010,:24doi:10.1186/1471-2105-11-24
 #
-# Note that extra references to the specific methods implemented in 
-# the toolkit are available in the documentation. 
-# 
+# Note that extra references to the specific methods implemented in
+# the toolkit are available in the documentation.
+#
 # More info at http://ete.cgenomics.org
 #
-# 
+#
 # #END_LICENSE#############################################################
 
 import re
 import os
-import base64 
+import base64
 
 __all__ = ["read_newick", "write_newick", "print_supported_formats"]
 
@@ -212,10 +212,15 @@ def read_newick(newick, root_node=None, format=0):
         else:
             nw = newick
         nw = nw.strip()
-        if not nw.startswith('(') or not nw.endswith(';'):
+        if not nw.startswith('(') and nw.endswith(';'):
+            return _read_node_data(nw, root_node, "single", format)
+
+        elif not nw.startswith('(') or not nw.endswith(';'):
             raise NewickError, \
             'Unexisting tree file or Malformed newick tree structure.'
-        return _read_newick_from_string(nw, root_node, format)
+        else:
+            return _read_newick_from_string(nw, root_node, format)
+
     else:
         raise NewickError, \
             "'newick' argument must be either a filename or a newick string."
@@ -227,12 +232,9 @@ def _read_newick_from_string(nw, root_node, format):
         raise NewickError, 'Parentheses do not match. Broken tree structure'
 
     # white spaces and separators are removed
-    nw = re.sub("\n", "", nw)
-    nw = re.sub("\r", "", nw)
-    nw = re.sub("\t", "", nw)
+    nw = re.sub("[\n\r\t]+", "", nw)
 
     current_parent = None
-
 
     # Ok, this is my own way of reading newick structures. I find it
     # more flexible and elegant than other docummented methods. Don't
@@ -294,12 +296,15 @@ def _parse_extra_features(node, NHX_string):
             raise ValueError, e
         node.add_feature(pname, pvalue)
 
-def _read_node_data(subnw, current_node, node_type,format):
+def _read_node_data(subnw, current_node, node_type, format):
     """ Reads a leaf node from a subpart of the original newick
     tree """
 
-    if node_type == "leaf":
-        node = current_node.add_child()
+    if node_type == "leaf" or node_type == "single":
+        if node_type == "leaf":
+            node = current_node.add_child()
+        else:
+            node = current_node
         container1 = NW_FORMAT[format][0][0]
         container2 = NW_FORMAT[format][1][0]
         converterFn1 = NW_FORMAT[format][0][1]
@@ -348,37 +353,66 @@ def _read_node_data(subnw, current_node, node_type,format):
                 and data[2].startswith("[&&NHX"):
             _parse_extra_features(node, data[2])
     else:
-        raise NewickError, "Unexpected leaf node format:\n\t"+ subnw[0:50]
+        raise NewickError, "Unexpected leaf node format:\n\t"+ subnw[0:50] + "[%s]" %format
     return
 
-def write_newick(node, features=None, format=1, _is_root=True):
-    """ Recursively reads a tree structure and returns its NHX
-    representation. """
-    newick = ""
-    if not node.children:
-        safe_name = re.sub("["+_ILEGAL_NEWICK_CHARS+"]", "_", \
-                               str(getattr(node, "name")))
+# def write_newick_recursive(node, features=None, format=1, _is_root=True):
+#     """ Recursively reads a tree structure and returns its NHX
+#     representation. """
+#     newick = ""
+#     if not node.children:
+#         safe_name = re.sub("["+_ILEGAL_NEWICK_CHARS+"]", "_", \
+#                                str(getattr(node, "name")))
 
-        newick += format_node(node, "leaf", format)
-        newick += _get_features_string(node, features)
-        return newick
-    else:
-        if node.children:
-            newick+= "("
-        for cnode in node.children:
-            newick += write_newick(cnode, features, format=format,\
-                                     _is_root = False)
-            # After last child is processed, add closing string
-            if cnode == node.children[-1]:
-                newick += ")"
-                if node.up is not None:
-                    newick += format_node(node, "internal", format)
-                newick += _get_features_string(node, features)
+#         newick += format_node(node, "leaf", format)
+#         newick += _get_features_string(node, features)
+#         #return newick
+
+#     else:
+#         if node.children:
+#             newick+= "("
+#         for cnode in node.children:
+#             newick += write_newick(cnode, features, format=format,\
+#                                      _is_root = False)
+#             # After last child is processed, add closing string
+#             if cnode == node.children[-1]:
+#                 newick += ")"
+#                 if node.up is not None:
+#                     newick += format_node(node, "internal", format)
+#                 newick += _get_features_string(node, features)
+#             else:
+#                 newick += ','
+
+#     if _is_root:
+#         newick += ";"
+#     return newick
+
+def write_newick(rootnode, features=None, format=1, format_root_node=True,
+                 is_leaf_fn=None):
+    """ Iteratively export a tree structure and returns its NHX
+    representation. """
+    newick = []
+    leaf = is_leaf_fn if is_leaf_fn else lambda n: not bool(n.children)
+    for postorder, node in rootnode.iter_prepostorder(is_leaf_fn=is_leaf_fn):
+        if postorder:
+            newick.append(")")
+            if node.up is not None or format_root_node:
+                newick.append(format_node(node, "internal", format))
+                newick.append(_get_features_string(node, features))
+        else:
+            if node is not rootnode and node != node.up.children[0]:
+                newick.append(",")
+
+            if leaf(node):
+                safe_name = re.sub("["+_ILEGAL_NEWICK_CHARS+"]", "_", \
+                               str(getattr(node, "name")))
+                newick.append(format_node(node, "leaf", format))
+                newick.append(_get_features_string(node, features))
             else:
-                newick += ','
-    if _is_root:
-        newick += ";"
-    return newick
+                newick.append("(")
+
+    newick.append(";")
+    return ''.join(newick)
 
 def _get_features_string(self, features=None):
     """ Generates the extended newick string NHX with extra data about
