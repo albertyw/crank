@@ -153,3 +153,7 @@ The main logic for the Crank program lies in `Crank.py` with the main control lo
   draw trees
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/albertyw/crank/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
